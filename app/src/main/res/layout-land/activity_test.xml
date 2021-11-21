@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.TestActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4169E1"
+        android:text="MATH TEST"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CANCEL TEST"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="@+id/title"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/studentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/score"
+        app:layout_constraintTop_toTopOf="@id/timeLayout"
+        app:layout_constraintBottom_toBottomOf="@id/timeLayout"/>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/studentName"
+        app:layout_constraintRight_toLeftOf="@id/timeLayout"
+        app:layout_constraintLeft_toRightOf="@id/studentName"/>
+
+    <LinearLayout
+        android:id="@+id/timeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_background"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question's remaining time:"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="20sp" />
+
+        <ProgressBar
+            android:id="@+id/countdownBar"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/timeLayout"
+        app:layout_constraintTop_toBottomOf="@id/timeLayout"
+        app:layout_constraintBottom_toTopOf="@id/finishTestBtn"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Answer:"
+        android:textSize="20sp"
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="@id/fragment_answer"
+        app:layout_constraintBottom_toTopOf="@id/previousAnsBtn"
+        app:layout_constraintLeft_toLeftOf="@id/timeLayout"/>
+
+    <FrameLayout
+        android:id="@+id/fragment_answer"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/timeLayout"
+        app:layout_constraintLeft_toRightOf="@id/previousAnsBtn"
+        app:layout_constraintRight_toLeftOf="@id/nextAnsBtn"
+        app:layout_constraintBottom_toTopOf="@id/finishTestBtn"/>
+
+    <Button
+        android:id="@+id/previousAnsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PREVIOUS"
+        android:visibility="invisible"
+        android:clickable="false"
+        app:layout_constraintTop_toTopOf="@id/fragment_answer"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_answer"
+        app:layout_constraintLeft_toLeftOf="@id/timeLayout"/>
+
+    <Button
+        android:id="@+id/nextAnsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEXT"
+        app:layout_constraintTop_toTopOf="@id/fragment_answer"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_answer"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/previousQBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PREVIOUS QUESTION"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/finishTestBtn"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/finishTestBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FINISH TEST"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/nextQBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="NEXT QUESTION"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/finishTestBtn"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <!--<LinearLayout
+        android:id="@+id/changeQLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/previousQBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="PREVIOUS QUESTION"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width=""
+            android:layout_height=""
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/nextQBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="NEXT QUESTION"/>
+        </FrameLayout>
+    </LinearLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
