@@ -15,7 +15,7 @@ The Math Tester retrieves questions randomly from a remote question bank server,
 # Installation
 If you haven't installed Node.JS on your system, visit https://nodejs.org/en/download/ to install the software.
 
-Once downloaded, navigate to QuestionBankServer inside your local repo and run the server
+Once installed, navigate to QuestionBankServer inside your local repo and run the server
 ```bash
 cd /Math-Tester/QuestionBankServer/QuestionBankServer
 node questionserver.js
