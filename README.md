@@ -1,4 +1,4 @@
-![My application banner](images/mathtester.png)
+![My application banner](AppDescription/mathtester.png)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/McEazzy/Math-Tester)
 ![GitHub top language](https://img.shields.io/github/languages/top/McEazzy/Math-Tester)
