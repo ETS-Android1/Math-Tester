@@ -14,7 +14,7 @@ The Math Tester retrieves questions randomly from a remote question bank server,
 # Demo
 Math Tester's 3 main features:
 
-<img src="AppDescription/Register.gif" height="600">    <img src="AppDescription/TakeTest.gif" height="600">    <img src="AppDescription/ViewRecord.gif" height="600">
+<img src="AppDescription/Register.gif" height="500">    <img src="AppDescription/TakeTest.gif" height="500">    <img src="AppDescription/ViewRecord.gif" height="500">
 
 **Server logs should indicate something familiar:
 ![Server access log](AppDescription/Server.JPG)
