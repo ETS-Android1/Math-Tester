@@ -3,7 +3,6 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/McEazzy/Math-Tester)
 ![GitHub top language](https://img.shields.io/github/languages/top/McEazzy/Math-Tester)
 ![GitHub repo size](https://img.shields.io/github/repo-size/McEazzy/Math-Tester)
-
 # Overview
 An android application that provides a platform for students to take math test online.
 
@@ -12,6 +11,14 @@ The application also allows user to register as many student entries as requeste
 The Math Tester retrieves questions randomly from a remote question bank server, which for testing purpose would be attached along with the app repository. Hence, the app is designed to fetch data specfically from the provided server file.
 
 => **Users can freely use their own server with modification to source code required.
+# Demo
+Math Tester's 3 main features:
+
+<img src="AppDescription/Register.gif" height="600">    <img src="AppDescription/TakeTest.gif" height="600">    <img src="AppDescription/ViewRecord.gif" height="600">
+
+**Server logs should indicate something familiar:
+![Server access log](AppDescription/Server.JPG)
+
 # Installation
 If you haven't installed Node.JS on your system, visit https://nodejs.org/en/download/ to install the software.
 
