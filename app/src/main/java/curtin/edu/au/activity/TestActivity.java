@@ -142,8 +142,6 @@ public class TestActivity extends AppCompatActivity {
             new DownloadTest().execute();
         }
 
-
-
         //return to pre-test activity
         returnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -437,7 +435,10 @@ public class TestActivity extends AppCompatActivity {
         {
             for(int i = 0; i < MAX_QUESTIONS; i++)
             {
-                publishProgress("Success", testRetrieval(), String.valueOf(i));
+                String q = testRetrieval();
+                if(q != null) {
+                    publishProgress("Success", q, String.valueOf(i));
+                }
             }
             return null;
         }
@@ -446,7 +447,7 @@ public class TestActivity extends AppCompatActivity {
         protected void onProgressUpdate(String... values)
         {
             //if the first parameter returns an Error string, notify users
-            if(values[1] == null)
+            if(!values[0].equals("Success"))
             {
                 Toast.makeText(TestActivity.this, values[0], Toast.LENGTH_LONG).show();
             }
@@ -518,8 +519,8 @@ public class TestActivity extends AppCompatActivity {
 
             try
             {
-                // create the URL version of the web link and establish a connection with the web server
-                String urlString = Uri.parse("https://192.168.1.107:8000/random/question/").buildUpon()
+                // create the URL of the web link and establish a connection with the web server(using the loopback address)
+                String urlString = Uri.parse("https://10.0.2.2:8000/random/question/").buildUpon()
                         .appendQueryParameter("method", "thedata.getit")
                         .appendQueryParameter("api_key", "01189998819991197253")
                         .appendQueryParameter("format", "json")
@@ -553,7 +554,7 @@ public class TestActivity extends AppCompatActivity {
             }
             catch(SocketTimeoutException e)
             {
-                publishProgress("Connection timeout! URL can't be reached");
+                publishProgress("Connection timeout! Question Bank's destination can't be reached. Can't retrieve question!");
                 //close the test when the remote server destination can't be reached
                 finish();
             }
