@@ -16,7 +16,7 @@ Math Tester's 3 main features:
 
 <img src="AppDescription/Register.gif" height="500">    <img src="AppDescription/TakeTest.gif" height="500">    <img src="AppDescription/ViewRecord.gif" height="500">
 
-**Server logs should indicate something familiar:
+**Server logs should indicate something similar to the following:
 ![Server access log](AppDescription/Server.JPG)
 
 # Installation
